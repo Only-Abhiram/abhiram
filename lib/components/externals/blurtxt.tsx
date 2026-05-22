@@ -12,7 +12,7 @@ function BlurText({ text, className = "" }: { text: string; className?: string }
           opacity: 0;
         }
       `}</style>
-      <p className={`flex flex-wrap gap-x-2 ${className}`}>
+      <span className={`flex flex-wrap gap-x-2 ${className}`}>
         {text.split(" ").map((word, i) => (
           <span
             key={i}
@@ -22,7 +22,7 @@ function BlurText({ text, className = "" }: { text: string; className?: string }
             {word}
           </span>
         ))}
-      </p>
+      </span>
     </>
   );
 }

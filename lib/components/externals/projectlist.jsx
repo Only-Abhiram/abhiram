@@ -58,10 +58,10 @@ export default function ProjectsList() {
               )}
             </div>
 
-            <p className="mt-2 text-zinc-500 text-lg leading-relaxed max-w-2xl">
+            <span className="mt-2 text-zinc-500 text-lg leading-relaxed max-w-2xl">
               <BlurText text={project.description}></BlurText>
               
-            </p>
+            </span>
 
 
           </div>
