@@ -130,7 +130,7 @@ export default function Home() {
   );
 }
 
-function Wrapper({ children }: { children: React.ReactNode }) {
+function Wrapper({ children }: { children?: React.ReactNode }) {
   const stripeStyle = {
     backgroundImage:
       "repeating-linear-gradient(-45deg, transparent 0px, transparent 4px, #e5e7eb 4px, #e5e7eb 6px)",
