@@ -9,6 +9,8 @@ import ProjectsList from '@/lib/components/externals/projectlist'
 import ScrollReveal from '@/lib/components/externals/blurreveal'
 import CodingPlatforms from '@/lib/components/cp'
 import Socials from '@/lib/components/connnect'
+import SpotifyLastPlayed from '@/lib/components/spotifyLastPlayed'
+import VisitorCounter from '@/lib/components/visitorCount'
 export default function Home() {
   function scrollToSection(section: string) {
     const element = document.getElementById(section);
@@ -112,6 +114,22 @@ export default function Home() {
       <Wrapper>
       <Socials></Socials>    
       </Wrapper>
+      
+      <Wrapper>
+      </Wrapper>
+      
+      <Wrapper>
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4"> */}
+    {/* <SpotifyLastPlayed /> */}
+    <VisitorCounter />
+  {/* </div> */}
+      </Wrapper>
+      
+      <Wrapper>
+      </Wrapper>
+      
+      
+      
       <Wrapper>
       </Wrapper>
       <Wrapper>
