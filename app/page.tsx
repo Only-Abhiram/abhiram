@@ -9,7 +9,6 @@ import ProjectsList from '@/lib/components/externals/projectlist'
 import ScrollReveal from '@/lib/components/externals/blurreveal'
 import CodingPlatforms from '@/lib/components/cp'
 import Socials from '@/lib/components/connnect'
-import SpotifyLastPlayed from '@/lib/components/spotifyLastPlayed'
 import VisitorCounter from '@/lib/components/visitorCount'
 export default function Home() {
   function scrollToSection(section: string) {
