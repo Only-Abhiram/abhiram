@@ -60,23 +60,32 @@ export async function GET() {
 }
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
-
+const VALTOWN_URL = process.env.VALTOWN_URL;
 function notifyHit(count: string) {
-  fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: TELEGRAM_CHAT_ID,
-      text: `${count} hits`,
-    }),
-  }).then((res) => {
-    if (res.ok) {
-      console.log(`[telegram] message sent: "${count} hits"`);
-    } else {
-      console.error(`[telegram] failed to send: ${res.status} ${res.statusText}`);
-    }
-  })
-  .catch((err) => {
-    console.error(`[telegram] request error:`, err);
-  }); 
+  // fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json" },
+  //   body: JSON.stringify({
+  //     chat_id: TELEGRAM_CHAT_ID,
+  //     text: `${count} hits`,
+  //   }),
+  // }).then((res) => {
+  //   if (res.ok) {
+  //     console.log(`[telegram] message sent: "${count} hits"`);
+  //   } else {
+  //     console.error(`[telegram] failed to send: ${res.status} ${res.statusText}`);
+  //   }
+  // })
+  // .catch((err) => {
+  //   console.error(`[telegram] request error:`, err);
+  // });
+  
+  
+  if (!VALTOWN_URL) {
+    console.error("VALTOWN_URL is not defined");
+    return;
+  }
+  fetch(VALTOWN_URL+"?count="+count, {
+    method: "GET",
+  }).catch(() => {});
 }
